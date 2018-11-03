@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  # get 'products/index'
-  # get 'products/show'
-  # get 'pages/index'
-  # get 'page/index'
+  resources :pages, only: [:show]
   
   get ':permalink', to: 'pages#permalink'
+  get 'products', to: 'products#index'
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
+
+
 
   root to: 'pages#index'
 

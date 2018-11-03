@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ECommerceProject</title>
+    <title>E-Commerce Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,15 @@
   </head>
 
   <body>
+  <header>
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'Products', products_path%>
+  <%= link_to 'About Us', about_path %>
+  <%= link_to 'Contact', contact_path %>
+  </header>
     <%= yield %>
+        <footer>
+      <p> Full-Stack Project 2018 </p>
+    </footer>
   </body>
 </html>
