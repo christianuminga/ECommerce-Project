@@ -14,7 +14,7 @@ class LineItemsTest < ApplicationSystemTestCase
     visit line_items_url
     click_on "New Line Item"
 
-    fill_in "Caart", with: @line_item.caart_id
+    fill_in "Cart", with: @line_item.cart_id
     fill_in "Product", with: @line_item.product_id
     click_on "Create Line item"
 
@@ -26,7 +26,7 @@ class LineItemsTest < ApplicationSystemTestCase
     visit line_items_url
     click_on "Edit", match: :first
 
-    fill_in "Caart", with: @line_item.caart_id
+    fill_in "Cart", with: @line_item.cart_id
     fill_in "Product", with: @line_item.product_id
     click_on "Update Line item"
 
