@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :line_items
-  resources :carts
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   resources :pages, only: [:show]
   resources :products, only: [:index, :show]
+  resources :line_items
+  resources :carts
 
   resources :search, only: [:index] do
     collection do 
@@ -17,8 +17,6 @@ Rails.application.routes.draw do
   get 'products', to: 'products#index'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
-
-
 
   root to: 'pages#index'
 
