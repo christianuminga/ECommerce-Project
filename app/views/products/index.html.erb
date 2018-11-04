@@ -2,9 +2,15 @@
 
 <ul>
     <% @products.each do |product| %>
-     <li>
-      <%= link_to product.name, product %> 
-      <%= product.price %> 
-     </li>
+    <div class="product">
+        <% if product.image.present? %>
+            <p>
+                <%= image_tag product.image%>
+            </p>
+        <%end%>
+        <p>
+            <%= link_to product.name, product %> <%= number_to_currency(product.price) %> 
+        </p>
+    </div> 
     <%end%>
 </ul>

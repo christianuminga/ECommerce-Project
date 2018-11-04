@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :pages, only: [:show]
+  resources :products, only: [:index, :show]
   
   get ':permalink', to: 'pages#permalink'
   get 'products', to: 'products#index'
