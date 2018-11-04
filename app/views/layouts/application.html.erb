@@ -38,6 +38,17 @@
           <div class="navbar-item">
             <div class="field is-grouped">
 
+            <% if total_cart_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart
+                <%= cart_count_over_one %>
+                </span>
+              <% end %>
+            <% end %>
+
             <%= link_to "Products", products_path, class:"navbar-item button is-warning" %>
             <%= link_to "About", about_path, class:"navbar-item button is-warning"%>
             <%= link_to "Contact", contact_path, class:"navbar-item button is-warning"%>
