@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 2018_11_04_203353) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "caart_id"
+    t.integer "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["caart_id"], name: "index_line_items_on_caart_id"
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
