@@ -69,3 +69,4 @@ gem "bulma-rails", "~> 0.7.2"
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'mini_magick'

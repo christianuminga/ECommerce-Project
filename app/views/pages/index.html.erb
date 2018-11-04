@@ -1,1 +1,29 @@
-<p>Find me in app/views/pages/index.html.erb</p>
+<% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Browse the latest careers
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<div class="product-index-grid pt4">
+  <% @products.each do |product| %>
+
+    <div class="product border-light">
+
+    <div class="pa3">
+
+      <h3 class="fw7 f4 title"><%= link_to product.name, product %></h3>
+
+      <p class="has-text-gray fg pt1"><%= product.description %></p>
+
+      <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(product.price) %></p>
+
+    </div>
+  </div>
+  <% end %>
+</div>

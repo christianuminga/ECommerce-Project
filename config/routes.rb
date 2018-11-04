@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:show]
   resources :products, only: [:index, :show]
+
+  resources :search, only: [:index] do
+    collection do 
+      get 'results'
+    end
+  end
   
   get ':permalink', to: 'pages#permalink'
   get 'products', to: 'products#index'

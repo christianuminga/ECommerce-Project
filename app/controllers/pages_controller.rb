@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+
+  def index
+    @products = Product.all.order("created_at desc").limit(5)
+  end
+
   def permalink
     @page = Page.find_by(permalink: params[:permalink])
     
