@@ -9,13 +9,18 @@
   </div>
 </section>
 <% end %>
+
       <%= form_tag(results_search_index_path, method: "get") do %>
         <%= select_tag"category", options_from_collection_for_select(Category.all, "id", "name"), :include_blank => "All" %>
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>
       <% end %>
-<div class="product-index-grid pt4">
 
+<% if @products.empty?%>
+    <p>Sorry, no products found </p>
+<% else%>
+
+<div class="product-index-grid pt4">
   <% @products.each do |product| %>
 
     <div class="product border-light">
@@ -31,4 +36,6 @@
     </div>
   </div>
   <% end %>
+  <%end%>
 </div>
+
