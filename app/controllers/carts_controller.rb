@@ -1,20 +1,20 @@
+# frozen_string_literal: true
+
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: %i[show edit update destroy]
 
   def index
     @carts = Cart.all
   end
 
-  def show
-  end
+  def show end
 
   def new
     @cart = Cart.new
   end
 
-  def edit
-  end
+  def edit end
 
   def create
     @cart = Cart.new(cart_params)
