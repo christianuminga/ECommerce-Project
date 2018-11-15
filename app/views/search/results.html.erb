@@ -10,13 +10,16 @@
 </section>
 <% end %>
 
+<div class="field">
       <%= form_tag(results_search_index_path, method: "get") do %>
+        <%= label_tag 'category', 'Category:' %>
         <%= select_tag"category", options_from_collection_for_select(Category.all, "id", "name"), :include_blank => "All" %>
+        <%= label_tag 'orderBy', 'Order By:' %>
         <%= select_tag"orderBy", options_for_select({"Name" => "1", "New" => "2", "Recently Update" =>"3"}) %>
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>
       <% end %>
-
+</div>
 <% if @products.empty?%>
     <p>Sorry, no products found </p>
 <% else%>
