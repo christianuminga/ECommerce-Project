@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class SearchController < ApplicationController
-  def index end
+  def index
+  end
 
   def results
     if params[:category] == "" && params[:q] != nil && params[:orderBy] == "1"
