@@ -1,5 +1,6 @@
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-AdminUser.create!(email: 'email@email.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'email@example.com', password: 'password', password_confirmation: 'password')
+
 
 Category.create!([
   {name: "Agriculture, Food and Natural Resources"},
